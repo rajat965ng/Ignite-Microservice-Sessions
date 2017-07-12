@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  cloud:
+      config:
+        server:
+           git:
+            uri: file://home/rajat/Desktop/ignite/session-1/config
+  application:
+    name: config-server
+  config:
+    name: configserver
+   
