@@ -1,0 +1,19 @@
+server:
+  port: 9999
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+zuul:
+   routes: 
+    customer-service: 
+     path: /customer-service/**
+     serviceId: CUSTOMER-SERVICE
+    order-service: 
+     path: /order-service/**
+     serviceId: ORDER-SERVICE
+    hysterix-service: 
+     path: /hystrix-service/**
+     serviceId: HYSTERIX-SERVICE
