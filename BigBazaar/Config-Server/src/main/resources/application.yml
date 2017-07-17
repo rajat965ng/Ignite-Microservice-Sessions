@@ -1,0 +1,19 @@
+server:
+  port: 8888
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+spring:
+  cloud:
+      config:
+        server:
+           git:
+            uri: file://home/rajat/Desktop/ignite/session-1/config
+  application:
+    name: config-server
+  config:
+    name: configserver
+   
